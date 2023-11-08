@@ -24,6 +24,7 @@
 		})
 		showModal.value = false
 		newNote.value = ""
+		errorMessage.value = ""
 	}
 
 </script>
@@ -32,7 +33,7 @@
   <main>
     <div v-if="showModal" class="overlay">
       <div class="modal">
-	      <textarea v-model="newNote" name="note" id="note" cols="30" rows="10"></textarea>
+	      <textarea v-model.trim="newNote" name="note" id="note" cols="30" rows="10"></textarea>
 	      <p v-if="errorMessage">{{errorMessage}}</p>
 	      <button @click="addNote">Add Note</button>
 	      <button class="close">Close</button>
