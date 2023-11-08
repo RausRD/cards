@@ -12,6 +12,9 @@
 	}
 
 	const addNote = () => {
+		if(newNote.value.length < 10) {
+			return
+		}
 		notes.value.push({
 			id: Math.floor(Math.random() * 1000000),
 			text: newNote.value,
@@ -43,7 +46,6 @@
           <p class="main-text">{{note.text}}</p>
           <p class="date">{{note.date.toLocaleDateString("en-US")}}</p>
         </div>
-
       </div>
     </div>
   </main>
